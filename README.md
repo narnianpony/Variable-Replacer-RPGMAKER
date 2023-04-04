@@ -36,7 +36,7 @@ From command line
   - Replace the name of the variable/switch in the system
  
  ### What this does not
- - Replace variables or switches used within "ranges" in the game, when the variable or witch is not the first one or the last one. AKA: When you modify a lot of variables or switches in one command
+ - Replace variables or switches used within "ranges" in the game, when the variable or switch is not the first one or the last one. AKA: When you modify a lot of variables or switches in one command
  - Replace variables or switches used in command plugin parameters
  
  There is also a testMap.json with an event with all the commands that uses variables and switches to test the code.
