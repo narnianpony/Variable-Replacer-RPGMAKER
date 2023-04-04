@@ -7,7 +7,7 @@
  *
  *	How to use:
  *	If you use the game within a webserver, just drop the php file in the root directory of the game
- *	If not, you can either install php and use it from command line
+ *	If not, you can either install php and use it from command line or use a portable version of php
  *
  *  ALWAYS BACKUP YOUR FILES BEFORE USING THIS SCRIPT
  *  Consider possible permissions issues as RPGMAKER usually saves files as 664 (Linux)
@@ -156,17 +156,17 @@ foreach ($patterns as $key => $value) {
 	$patterns[$key]="/".$value."/";
 }
 
+
+//Files to search
+$dataFiles = glob($path."data/*.json");
+$pluginFiles = glob($path."js/plugins/*.js");
+
 /*
 //If you want to debug
 var_dump($patterns);
 var_dump($dataFiles);
 var_dump($pluginFiles);
 */
-
-
-//Files to search
-$dataFiles = glob($path."data/*.json");
-$pluginFiles = glob($path."js/plugins/*.js");
 
 
 $replacement = '${1}'.$argTo.'${2}';
