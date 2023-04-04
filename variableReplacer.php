@@ -7,7 +7,7 @@
  *
  *	How to use:
  *	If you use the game within a webserver, just drop the php file in the root directory of the game
- *	If not, you can either install php and use it from command line or use a portable version of php
+ *	If not, you can either install php and use it from command line
  *
  *  ALWAYS BACKUP YOUR FILES BEFORE USING THIS SCRIPT
  *  Consider possible permissions issues as RPGMAKER usually saves files as 664 (Linux)
@@ -15,13 +15,13 @@
  *  From webserver
  *  Navigate to this php file and use the following GET parameters
  *
- *  variableReplacer.php?variable=250&to=251       To move variable 250 to 251
- *  variableReplacer.php?switch=250&to=251         To move switch 250 to 251
+ *  variableReplacer.php?variable=250&to=251       To replace variable 250 to 251
+ *  variableReplacer.php?switch=250&to=251         To replace switch 250 to 251
  *
  *
  *  From command line
- *  php -f variableReplacer.php variable 250 251   To move variable 250 to 251
- *  php -f variableReplacer.php switch 250 251     To move switch 250 to 251
+ *  php -f variableReplacer.php variable 250 251   To replace variable 250 to 251
+ *  php -f variableReplacer.php switch 250 251     To replace switch 250 to 251
  * 
  *  
  *  Should work with RPG Maker MZ and MV
@@ -52,44 +52,44 @@ $variablesCommands='
 ({"code":104,"indent":[-"0-9a-zA-Z]*,"parameters":\[)XXX(,)
 ({"code":122,"indent":[-"0-9a-zA-Z]*,"parameters":\[)XXX(,)
 ({"code":122,"indent":[-"0-9a-zA-Z]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX(,)
-({"code":111,"indent":[-"0-9a-zA-Z]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX(,)
+({"code":111,"indent":[-"0-9a-zA-Z]*,"parameters":\[1,)XXX(,)
 ({"code":125,"indent":[-"0-9a-zA-Z]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX(\])
 ({"code":126,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX(\])
 ({"code":127,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX(,)
 ({"code":128,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX(,)
-({"code":311,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX(,)
-({"code":311,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX(,)
-({"code":312,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX(,)
-({"code":312,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX(\])
-({"code":326,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX(,)
-({"code":326,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX(\])
-({"code":313,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX(,)
-({"code":314,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX(\])
-({"code":315,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX(,)
-({"code":315,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX(,)
-({"code":316,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX(,)
-({"code":316,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX(,)
-({"code":317,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX(,)
-({"code":317,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":318,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":201,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":201,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":201,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":202,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":202,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":202,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":203,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":203,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
+({"code":311,"indent":[0-9]*,"parameters":\[1,)XXX(,)
+({"code":311,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,1,)XXX(,)
+({"code":312,"indent":[0-9]*,"parameters":\[1,)XXX(,)
+({"code":312,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,1,)XXX(\])
+({"code":326,"indent":[0-9]*,"parameters":\[1,)XXX(,)
+({"code":326,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,1,)XXX(\])
+({"code":313,"indent":[0-9]*,"parameters":\[1,)XXX(,)
+({"code":314,"indent":[0-9]*,"parameters":\[1,)XXX(\])
+({"code":315,"indent":[0-9]*,"parameters":\[1,)XXX(,)
+({"code":315,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,1,)XXX(,)
+({"code":316,"indent":[0-9]*,"parameters":\[1,)XXX(,)
+({"code":316,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,1,)XXX(,)
+({"code":317,"indent":[0-9]*,"parameters":\[1,)XXX(,)
+({"code":317,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,1,)XXX([,\]])
+({"code":318,"indent":[0-9]*,"parameters":\[1,)XXX([,\]])
+({"code":201,"indent":[0-9]*,"parameters":\[1,)XXX([,\]])
+({"code":201,"indent":[0-9]*,"parameters":\[1,[-"0-9a-zA-Z]*,)XXX([,\]])
+({"code":201,"indent":[0-9]*,"parameters":\[1,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
+({"code":202,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,1,)XXX([,\]])
+({"code":202,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,1,[-"0-9a-zA-Z]*,)XXX([,\]])
+({"code":202,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,1,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
+({"code":203,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,1,[-"0-9a-zA-Z]*,)XXX([,\]])
+({"code":203,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,1,)XXX([,\]])
 ({"code":231,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
 ({"code":231,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
 ({"code":232,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
 ({"code":232,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":301,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":285,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":285,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":331,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":332,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
-({"code":342,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX([,\]])
+({"code":301,"indent":[0-9]*,"parameters":\[1,)XXX([,\]])
+({"code":285,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,1)XXX([,\]])
+({"code":285,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,1,[-"0-9a-zA-Z]*,)XXX([,\]])
+({"code":331,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,1,)XXX([,\]])
+({"code":332,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,1,)XXX([,\]])
+({"code":342,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,1,)XXX([,\]])
 ';
 
 //List of commands and possible switches uses in rpg maker code
@@ -100,7 +100,7 @@ $switchesCommands=
 (\$gameSwitches\.setValue\()XXX(,)
 (\\\\[Ss]\[)XXX(\])
 (<<s\[)XXX(\])
-({"code":111,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX([,\]])
+({"code":111,"indent":[0-9]*,"parameters":\[0,)XXX([,\]])
 ({"code":121,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX([,\]])
 ({"code":121,"indent":[0-9]*,"parameters":\[)XXX([,\]])
 ({"code":27,"parameters":\[)XXX([,\]])
@@ -156,10 +156,10 @@ foreach ($patterns as $key => $value) {
 	$patterns[$key]="/".$value."/";
 }
 
-
 //Files to search
 $dataFiles = glob($path."data/*.json");
 $pluginFiles = glob($path."js/plugins/*.js");
+
 
 /*
 //If you want to debug
