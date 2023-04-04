@@ -13,16 +13,16 @@ From webserver
 
 Navigate to this php file and use the following GET parameters
 
-`variableReplacer.php?variable=250&to=251`       To replace variable 250 to 251
+`variableReplacer.php?variable=250&to=251`       To move variable 250 to 251
 
-`variableReplacer.php?switch=250&to=251`         To replace switch 250 to 251
+`variableReplacer.php?switch=250&to=251`         To move switch 250 to 251
  
  
 From command line
 
-`php -f variableReplacer.php variable 250 251`   To replace variable 250 to 251
+`php -f variableReplacer.php variable 250 251`   To move variable 250 to 251
 
-`php -f variableReplacer.php switch 250 251`     To replace switch 250 to 251
+`php -f variableReplacer.php switch 250 251`     To move switch 250 to 251
  
   
 **Should work with RPG Maker MZ and MV**
