@@ -2,7 +2,8 @@
 This script replaces all occurrences of uses of a variable number in a game and replaces it with another number. This is helpful when you need to move some variables to keep your variables list organized.
  
 ## How to use:
-If you use the game within a webserver, just drop the php file in the root directory of the game
+If you use the game within a webserver, just drop the php file in the root directory of the game.
+
 If not, you can either install php and use it from command line or use a portable version of php
  
 **ALWAYS BACKUP YOUR FILES BEFORE USING THIS SCRIPT**
