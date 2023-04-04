@@ -3,7 +3,7 @@ This script replaces all occurrences of uses of a variable number in a game and 
  
 ## How to use:
 If you use the game within a webserver, just drop the php file in the root directory of the game
-If not, you can either install php and use it from command line
+If not, you can either install php and use it from command line or use a portable version of php
  
 **ALWAYS BACKUP YOUR FILES BEFORE USING THIS SCRIPT**
 
