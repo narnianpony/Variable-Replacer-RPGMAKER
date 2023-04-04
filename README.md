@@ -31,7 +31,7 @@ From command line
 ### What this does
   - This replaces all variables/switches occurrences in RPGMAKER commands, in maps or common events
   - This replaces all variables/switches used in the \v[] \s[] format
-  - This replaces all variables/switches used in $gameVariables and $gameSwitches javascript files, in case you wrote internal plugins for your game
+  - This replaces all variables/switches used in javascript files with the functions $gameVariables and $gameSwitches, in case you wrote internal plugins for your game
   - Some plugins accept <<s[]>> and <<v[]>> formats, those are also replaced
   - Replace the name of the variable/switch in the system
  
