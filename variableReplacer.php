@@ -53,6 +53,7 @@ $variablesCommands='
 ({"code":104,"indent":[-"0-9a-zA-Z]*,"parameters":\[)XXX(,)
 ({"code":122,"indent":[-"0-9a-zA-Z]*,"parameters":\[)XXX(,)
 ({"code":122,"indent":[-"0-9a-zA-Z]*,"parameters":\[[-"0-9a-zA-Z]*,)XXX(,)
+({"code":122,"indent":[-"0-9a-zA-Z]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,1,)XXX(,)
 ({"code":111,"indent":[-"0-9a-zA-Z]*,"parameters":\[1,)XXX(,)
 ({"code":125,"indent":[-"0-9a-zA-Z]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX(\])
 ({"code":126,"indent":[0-9]*,"parameters":\[[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,[-"0-9a-zA-Z]*,)XXX(\])
